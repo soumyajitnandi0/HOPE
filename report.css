@@ -1,104 +1,107 @@
-/* Base Reset */
-* {
+/* General Styles */
+body {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-}
-
-body {
     font-family: 'Arial', sans-serif;
-    background: linear-gradient(to bottom right, #e8f5e9, #c8e6c9); /* Light green gradient */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    color: #2e7d32; /* Professional dark green */
+    background: linear-gradient(to right, #e1f5c4, #c6e6a7);
+    color: #333;
 }
 
-form {
-    background: #fff; /* White card background */
-    padding: 20px;
+/* Header Styles */
+header {
+    background: #27ae60;
+    padding: 15px 20px;
+    color: white;
+    text-align: center;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+header .logo h1 {
+    font-size: 2rem;
+    margin: 0;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* Section Styles */
+section.blood-input {
+    max-width: 700px;
+    margin: 50px auto;
+    background: white;
     border-radius: 10px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 400px;
-    animation: fadeInUp 0.8s ease-in-out;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px 30px;
+    text-align: center;
 }
 
-label {
-    font-weight: 600;
-    color: #1b5e20; /* Dark green */
-}
-
-input[type="text"],
-input[type="number"] {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #c8e6c9; /* Light green border */
-    border-radius: 5px;
-    background-color: #f9f9f9;
-    font-size: 0.9rem;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-input[type="text"]:focus,
-input[type="number"]:focus {
-    border-color: #2e7d32; /* Highlighted green */
-    box-shadow: 0 0 5px rgba(46, 125, 50, 0.4);
-    outline: none;
-}
-
-.row {
-    display: flex;
-    justify-content: space-between;
-    gap: 10px;
-}
-
-.row input {
-    width: 48%; /* Half width for side-by-side inputs */
-}
-
-.wbc-list {
+section.blood-input h2 {
+    font-size: 2rem;
+    color: #27ae60;
     margin-bottom: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
 }
 
-.wbc-list label {
-    display: block;
-    margin-bottom: 5px;
+/* Form Styles */
+form#blood-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
 
-ul {
-    list-style: none;
-    padding-left: 0;
+form#blood-form label {
+    font-weight: bold;
+    color: #555;
+    text-align: left;
 }
 
-ul li {
-    margin-bottom: 10px;
+form#blood-form input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    outline: none;
+    width: 100%;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
 }
 
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+form#blood-form input:focus {
+    border-color: #27ae60;
+    box-shadow: 0 0 5px rgba(39, 174, 96, 0.5);
 }
 
-/* Mobile Responsiveness */
-@media (max-width: 480px) {
-    form {
+form#blood-form button {
+    background: #27ae60;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+form#blood-form button:hover {
+    background: #2ecc71;
+    transform: translateY(-3px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    section.blood-input {
+        margin: 20px;
         padding: 15px;
     }
 
-    .row input {
-        width: 100%; /* Full width on smaller screens */
+    form#blood-form input {
+        font-size: 0.9rem;
+        padding: 8px;
     }
 
-    label {
-        font-size: 0.85rem;
+    form#blood-form button {
+        font-size: 0.9rem;
+        padding: 10px 15px;
     }
 }
