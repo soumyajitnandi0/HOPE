@@ -1,0 +1,78 @@
+/* General Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to right, #fdfbfb, #ebedee);
+    color: #333;
+}
+
+/* Header Styles */
+header {
+    background: #27ae60;
+    padding: 15px 20px;
+    color: white;
+    text-align: center;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+header .logo h1 {
+    font-size: 2rem;
+    margin: 0;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* Section Styles */
+section.result {
+    max-width: 800px;
+    margin: 50px auto;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 30px 40px;
+    text-align: center;
+}
+
+section.result h2 {
+    font-size: 2rem;
+    color: #27ae60;
+    margin-bottom: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* Report Container Styles */
+#report {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    background: #f7f7f7;
+    text-align: left;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #555;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+/* Highlight Sections in Report */
+#report strong {
+    color: #27ae60;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    section.result {
+        margin: 20px;
+        padding: 20px;
+    }
+
+    section.result h2 {
+        font-size: 1.5rem;
+    }
+
+    #report {
+        font-size: 1rem;
+    }
+}
