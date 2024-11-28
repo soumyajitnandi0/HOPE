@@ -1,0 +1,104 @@
+/* Base Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to bottom right, #e8f5e9, #c8e6c9); /* Light green gradient */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: #2e7d32; /* Professional dark green */
+}
+
+form {
+    background: #fff; /* White card background */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    animation: fadeInUp 0.8s ease-in-out;
+}
+
+label {
+    font-weight: 600;
+    color: #1b5e20; /* Dark green */
+}
+
+input[type="text"],
+input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #c8e6c9; /* Light green border */
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    font-size: 0.9rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus {
+    border-color: #2e7d32; /* Highlighted green */
+    box-shadow: 0 0 5px rgba(46, 125, 50, 0.4);
+    outline: none;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.row input {
+    width: 48%; /* Half width for side-by-side inputs */
+}
+
+.wbc-list {
+    margin-bottom: 20px;
+}
+
+.wbc-list label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+ul li {
+    margin-bottom: 10px;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 480px) {
+    form {
+        padding: 15px;
+    }
+
+    .row input {
+        width: 100%; /* Full width on smaller screens */
+    }
+
+    label {
+        font-size: 0.85rem;
+    }
+}
