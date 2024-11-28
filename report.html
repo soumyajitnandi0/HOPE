@@ -3,49 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Report - HOPE</title>
+    <title>HOPE - Blood Input</title>
     <link rel="stylesheet" href="report.css">
+    <script src="script.js" defer></script>
+
 </head>
 <body>
-    <div>
-        <form action="result.html">
-            <div class="row">
-                <div>
-                    <label for="rbc">RBC</label>
-                    <input type="number" id="rbc" class="rbc">
-                </div>
-                <div>
-                    <label for="hemoglobin">Hemoglobin</label>
-                    <input type="number" id="hemoglobin" class="hemoglobin">
-                </div>
+    <header>
+        <nav>
+            <div class="logo">
+                <h1>HOPE</h1>
             </div>
-    
-            <div class="wbc-list">
-               
-                <label for="wbc">WBC</label>
-                <input type="text" id="wbc" class="wbc">
-                <ul>
-                    <label for="neutrophils">Neutrophils</label>
-                    <li><input type="number" id="neutrophils" class="neutrophils"></li>
-                    <li>
-                        <label for="lymphocytes">Lymphocytes</label>
-                        <input type="number" id="lymphocytes" class="lymphocytes">
-                    </li>
-                    <li>
-                        <label for="eosinophils">Eosinophils</label>
-                        <input type="number" id="eosinophils" class="eosinophils">
-                    </li>
-                    <li>
-                        <label for="basophils">Basophils</label>
-                        <input type="number" id="basophils" class="basophils">
-                    </li>
-                </ul>
-            </div>
-    
-            <label for="platelet">Platelet</label>
-            <input type="number" id="platelet" class="platelet">
+        </nav>
+    </header>
+    <section class="blood-input">
+        <h2>Blood Test Parameters</h2>
+        <form id="blood-form">
+            <label for="rbc">RBC Count (million/μL):</label>
+            <input type="number" id="rbc" name="rbc" required>
+
+            <label for="hemoglobin">Hemoglobin (g/dL):</label>
+            <input type="number" id="hemoglobin" name="hemoglobin" required>
+
+            <label for="wbc">WBC Count (cells/μL):</label>
+            <input type="number" id="wbc" name="wbc" required>
+
+            <label for="neutrophils">Neutrophils (%):</label>
+            <input type="number" id="neutrophils" name="neutrophils" required>
+
+            <label for="eosinophils">Eosinophils (%):</label>
+            <input type="number" id="eosinophils" name="eosinophils" required>
+
+            <label for="basophils">Basophils (%):</label>
+            <input type="number" id="basophils" name="basophils" required>
+
+            <label for="platelet">Platelet Count (thousands/μL):</label>
+            <input type="number" id="platelet" name="platelet" required>
+
+            <button type="button" onclick="analyzeBlood()">Analyze</button>
         </form>
-    </div>
-    
+    </section>
 </body>
 </html>
