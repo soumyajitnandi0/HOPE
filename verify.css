@@ -4,15 +4,15 @@ body {
     margin: 0;
     padding: 0;
     color: #333;
-    background: linear-gradient(to bottom right, #ff9a9e, #fad0c4);
+    background: linear-gradient(to right, #ecfbd5, #c6e6a7);
 }
 
 /* Header */
 header {
-    background: #ff6b6b;
+    background: #27ae60;
     color: white;
     padding: 15px 20px;
-    text-align: center;
+    text-align:left ;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
@@ -36,7 +36,7 @@ header .logo h1 {
 
 /* Intro Section */
 .intro-container {
-    flex: 1;
+    width: 85vh;
     padding: 20px;
     color: #333;
     text-align: left;
@@ -45,18 +45,21 @@ header .logo h1 {
 .intro-container h2 {
     font-size: 3rem;
     margin-bottom: 15px;
-    color: #ff6b6b;
+    color: #27ae60;
 }
 
 .intro-container p {
     font-size: 1.5rem;
     margin-bottom: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 400;
 }
+
 
 .get-started-btn {
     padding: 15px 30px;
     border: none;
-    background: #ff6b6b;
+    background: #27ae60;
     color: white;
     font-size: 1.2rem;
     font-weight: bold;
@@ -66,7 +69,7 @@ header .logo h1 {
 }
 
 .get-started-btn:hover {
-    background: #ff4757;
+    background: #148b46;
     transform: scale(1.05);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
@@ -86,10 +89,9 @@ header .logo h1 {
 
 .content h2 {
     margin-bottom: 20px;
-    color: #ff6b6b;
+    color: #27ae60;
     font-size: 2rem;
 }
-
 
 /* Password Display */
 #passwordDisplay {
@@ -104,7 +106,6 @@ header .logo h1 {
     transition: opacity 0.3s ease-in-out;
 }
 
-
 .content input {
     width: 50%;
     margin: 10px 0;
@@ -117,7 +118,7 @@ header .logo h1 {
 }
 
 .content input:focus {
-    border-color: #ff6b6b;
+    border-color: #27ae60;
 }
 
 #verifyButton {
@@ -125,7 +126,7 @@ header .logo h1 {
     padding: 12px;
     margin-top: 10px;
     border: none;
-    background: #ff6b6b;
+    background: #27ae60;
     color: white;
     border-radius: 8px;
     font-size: 1.2rem;
@@ -135,7 +136,7 @@ header .logo h1 {
 }
 
 #verifyButton:hover {
-    background: #ff4757;
+    background: #148b46;
     transform: scale(1.03);
 }
 
@@ -163,8 +164,57 @@ header .logo h1 {
 }
 
 
+/* Footer Styling */
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+}
 
+.footer .container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 70px;
+}
 
+.footer-about, .footer-contact, .footer-social {
+    flex: 1;
+    padding: 0 15px;
+}
 
+.footer-contact ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-contact li {
+    margin-bottom: 8px;
+}
+
+.footer-contact a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-social a {
+    margin-right: 10px;
+    color: #fff;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.footer-social img {
+    height: 30px;
+    width: 30px;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding: 10px 0;
+    background-color: #222;
+    font-size: 14px;
+}
 
 
