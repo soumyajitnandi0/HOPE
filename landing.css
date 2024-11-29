@@ -23,19 +23,20 @@ header .logo h1 {
     letter-spacing: 2px;
 }
 
-/* Landing Page Layout */
+/* Landing Section */
 .landing {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
     height: 90vh;
-    padding: 20px;
+    padding: 30px;
+    gap: 20px;
 }
 
 /* Intro Section */
 .intro-container {
-    width: 50%;
+    flex: 1;
     padding: 20px;
     color: #333;
     text-align: left;
@@ -49,7 +50,7 @@ header .logo h1 {
 
 .intro-container p {
     font-size: 1.5rem;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 
 .get-started-btn {
@@ -70,23 +71,28 @@ header .logo h1 {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
-/* Login Section */
+/* Content Section (Verify OTP) */
 .content {
-    width: 35%;
-    padding: 30px;
+    flex: 1;
+    width: 80vh;
+    padding-top: 5px;
+    padding-bottom: 35px;
+    margin-right: 50px;
     background: white;
     border-radius: 15px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    text-align: center;
 }
 
 .content h2 {
     margin-bottom: 20px;
     color: #ff6b6b;
-    text-align: center;
+    font-size: 2rem;
 }
 
+
 .content input {
-    width: 100%;
+    width: 50%;
     margin: 10px 0;
     padding: 12px;
     border: 1px solid #ddd;
@@ -100,8 +106,8 @@ header .logo h1 {
     border-color: #ff6b6b;
 }
 
-.content button {
-    width: 100%;
+#continueButton {
+    width: 55%;
     padding: 12px;
     margin-top: 10px;
     border: none;
@@ -114,7 +120,7 @@ header .logo h1 {
     transition: 0.4s ease-in-out;
 }
 
-.content button:hover {
+#continueButton:hover {
     background: #ff4757;
     transform: scale(1.03);
 }
@@ -123,13 +129,21 @@ header .logo h1 {
 @media (max-width: 768px) {
     .landing {
         flex-direction: column;
-        justify-content: center;
-        text-align: center;
+        align-items: center;
         gap: 20px;
+        height: auto;
     }
 
-    .intro-container,
-    .content {
+    .intro-container, .content {
         width: 90%;
+        flex: none;
+    }
+
+    .intro-container h2 {
+        font-size: 2.5rem;
+    }
+
+    .intro-container p {
+        font-size: 1.2rem;
     }
 }

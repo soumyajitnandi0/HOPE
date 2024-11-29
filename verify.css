@@ -1,102 +1,170 @@
-/* Global Styles */
-* {
+/* General Styles */
+body {
+    font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f5fdf4; /* Light green for a medical theme */
     color: #333;
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
+    background: linear-gradient(to bottom right, #ff9a9e, #fad0c4);
 }
 
+/* Header */
 header {
-    background-color: #2e8b57;
+    background: #ff6b6b;
     color: white;
-    padding: 15px;
+    padding: 15px 20px;
     text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
-header h1 {
-    font-size: 2rem;
+header .logo h1 {
+    margin: 0;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
-main {
-    flex-grow: 1;
+/* Landing Section */
+.landing {
     display: flex;
-    justify-content: center;
+    flex-direction: row;
     align-items: center;
-    padding: 20px;
-}
-
-.content {
-    background: white;
+    justify-content: space-between;
+    height: 90vh;
     padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 400px;
-    position: relative;
-    text-align: center;
+    gap: 20px;
 }
 
-/* Password Display */
-.password-display {
-    position: absolute;
-    top: -60px;
-    left: 0;
-    width: 100%;
-    padding: 10px;
-    background-color: #1e7d2c; /* Green */
+/* Intro Section */
+.intro-container {
+    flex: 1;
+    padding: 20px;
+    color: #333;
+    text-align: left;
+}
+
+.intro-container h2 {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    color: #ff6b6b;
+}
+
+.intro-container p {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.get-started-btn {
+    padding: 15px 30px;
+    border: none;
+    background: #ff6b6b;
     color: white;
     font-size: 1.2rem;
     font-weight: bold;
-    border-radius: 5px;
-    opacity: 0; /* Hidden by default */
-    visibility: hidden;
-    transform: translateY(-20px); /* Slide effect */
-    transition: all 0.5s ease-in-out;
-}
-
-.password-display.show {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0); /* Slide-in effect */
-}
-
-/* Input and Button */
-input {
-    width: 80%;
-    padding: 10px;
-    margin: 15px 0;
-    font-size: 1rem;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-}
-
-button {
-    padding: 10px 20px;
-    background-color: #2e8b57;
-    color: white;
-    border: none;
-    border-radius: 5px;
+    border-radius: 8px;
     cursor: pointer;
-    font-size: 1rem;
-    margin-top: 10px;
+    transition: 0.4s ease-in-out;
 }
 
-button:hover {
-    background-color: #246c42;
+.get-started-btn:hover {
+    background: #ff4757;
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
-/* Footer */
-footer {
-    background-color: #2e8b57;
-    color: white;
+/* Content Section (Verify OTP) */
+.content {
+    flex: 1;
+    width: 80vh;
+    padding-top: 5px;
+    padding-bottom: 35px;
+    margin-right: 50px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
     text-align: center;
-    padding: 10px;
 }
+
+.content h2 {
+    margin-bottom: 20px;
+    color: #ff6b6b;
+    font-size: 2rem;
+}
+
+
+/* Password Display */
+#passwordDisplay {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    color: #555;
+    background: #ffffff;
+    padding: 10px;
+    border: 1px solid #ddd 0.3s ease-in-out;
+    border-radius: 8px;
+    text-align: center;
+    transition: opacity 0.3s ease-in-out;
+}
+
+
+.content input {
+    width: 50%;
+    margin: 10px 0;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.content input:focus {
+    border-color: #ff6b6b;
+}
+
+#verifyButton {
+    width: 55%;
+    padding: 12px;
+    margin-top: 10px;
+    border: none;
+    background: #ff6b6b;
+    color: white;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.4s ease-in-out;
+}
+
+#verifyButton:hover {
+    background: #ff4757;
+    transform: scale(1.03);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .landing {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        height: auto;
+    }
+
+    .intro-container, .content {
+        width: 90%;
+        flex: none;
+    }
+
+    .intro-container h2 {
+        font-size: 2.5rem;
+    }
+
+    .intro-container p {
+        font-size: 1.2rem;
+    }
+}
+
+
+
+
+
+
+

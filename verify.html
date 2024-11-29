@@ -3,28 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HOPE - Verify OTP</title>
+    <title>HOPE - Landing</title>
     <link rel="stylesheet" href="verify.css">
     <script src="script.js" defer></script>
 </head>
 <body>
     <header>
         <nav>
-            <h1>HOPE</h1>
+            <div class="logo">
+                <h1>HOPE</h1>
+            </div>
         </nav>
     </header>
 
+    <section class="landing">
+        <div class="intro-container">
+            <h2>Welcome to HOPE</h2>
+            <p>Your Personal Health Assistant</p>
+        </div>
+
+        
     <main>
         <section class="content">
-            <h2>Verify Your OTP</h2>
+            <h2>Verify your password</h2>
             <div id="passwordDisplay" class="password-display"></div>
-            <input type="text" id="passwordInput" placeholder="Enter OTP" required>
+            <input type="text" id="passwordInput" placeholder="Enter password" required>
             <button id="verifyButton">Verify</button>
         </section>
     </main>
-
-    <footer>
-        <p>&copy; 2024 HOPE Health Services. All rights reserved.</p>
-    </footer>
+    </section>
 </body>
 </html>
+
+
+

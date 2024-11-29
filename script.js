@@ -283,7 +283,7 @@ document.addEventListener("DOMContentLoaded", () => {
         // Show password if it's a new number
         if (isNewNumber) {
             const passwordDisplay = document.querySelector(".password-display");
-            passwordDisplay.textContent = `Your Password: ${otpStore[mobileNumber]}`;
+            passwordDisplay.textContent = `[ Your Password: ${otpStore[mobileNumber]} ]`;
             passwordDisplay.classList.add("show");
 
             setTimeout(() => {
