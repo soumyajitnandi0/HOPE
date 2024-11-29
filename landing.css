@@ -71,7 +71,7 @@ header .logo h1 {
 }
 
 /* Login Section */
-.login-container {
+.content {
     width: 35%;
     padding: 30px;
     background: white;
@@ -79,13 +79,13 @@ header .logo h1 {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
-.login-container h2 {
+.content h2 {
     margin-bottom: 20px;
     color: #ff6b6b;
     text-align: center;
 }
 
-.login-container input {
+.content input {
     width: 100%;
     margin: 10px 0;
     padding: 12px;
@@ -96,11 +96,11 @@ header .logo h1 {
     transition: border-color 0.3s;
 }
 
-.login-container input:focus {
+.content input:focus {
     border-color: #ff6b6b;
 }
 
-.login-container button {
+.content button {
     width: 100%;
     padding: 12px;
     margin-top: 10px;
@@ -114,25 +114,9 @@ header .logo h1 {
     transition: 0.4s ease-in-out;
 }
 
-.login-container button:hover {
+.content button:hover {
     background: #ff4757;
     transform: scale(1.03);
-}
-
-.login-container p {
-    text-align: center;
-    margin-top: 15px;
-    color: #555;
-}
-
-.login-container a {
-    color: #ff6b6b;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.login-container a:hover {
-    text-decoration: underline;
 }
 
 /* Responsive Design */
@@ -144,11 +128,8 @@ header .logo h1 {
         gap: 20px;
     }
 
-    .intro-container {
-        width: 90%;
-    }
-
-    .login-container {
+    .intro-container,
+    .content {
         width: 90%;
     }
 }
