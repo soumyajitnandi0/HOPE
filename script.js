@@ -37,16 +37,16 @@ function analyzeBlood() {
      
     //for --> Vitamin B12 or Folate Deficiency
      if(hemoglobin < 13.8 && mcv > 100)
-        addDisease("Vitamin B12 or Folate Deficiency", "A deficiency caused by inadequate absorption or intake of B12 or folate, causing large, immature red blood cells.");
+        addDisease("- Vitamin B12 or Folate Deficiency", " If you don't get enough vitamin B12 or folate, it can cause weakness, tiredness, and problems with your nerves. Your body won't be able to make healthy red blood cells, which can lead to anemia.");
 
     //for --> Chronic Disease Anemia
     if (hemoglobin < 13.8 && rbc < 4.7 && mcv < 100) 
-        addDisease("Chronic Disease Anemia", "Anemia associated with long-term conditions such as infections, inflammation, or cancer.");
+        addDisease("Chronic Disease Anemia", "- Chronic Disease Anemia** happens when a long-term illness affects the body’s ability to make enough healthy red blood cells. This can lead to low energy, weakness, and feeling tired. It’s often seen in people with conditions like infections, kidney problems, or autoimmune diseases. These illnesses can stop the body from using iron properly or slow down red blood cell production.");
 
 
     //for --> Hemolytic anemia
     if (hemoglobin < 13.8 && rbc < 4.7 )
-        addDisease("Hemolytic Anemia", "A condition where red blood cells are destroyed faster than they can be produced.");
+        addDisease("Hemolytic Anemia", "- Hemolytic Anemia** happens when red blood cells are destroyed faster than the body can make new ones. This can make you feel tired, weak, and short of breath. It can also cause yellow skin (jaundice) and dark-colored urine. It may happen because of problems in the red blood cells themselves or because the body’s immune system attacks them.");
 
 
 
@@ -55,21 +55,21 @@ function analyzeBlood() {
  
     // for --> Bacterial Infection
     if (wbc > 11000 && neutrophils > 70 ) 
-        addDisease("Bacterial Infection", "An infection caused by bacteria, characterized by fever and elevated white blood cells.");
+        addDisease("Bacterial Infection", " - A **Bacterial Infection** occurs when harmful bacteria enter the body and cause illness. This can lead to symptoms like fever, fatigue, pain, or swelling, depending on the part of the body affected. Common bacterial infections include strep throat, urinary tract infections, and pneumonia. Antibiotics are often used to treat bacterial infections. If not treated, they can become more serious..");
 
     //for --> Viral Infection
     if (wbc > 11000  && lymphocytes > 40) 
-        addDisease("Viral Infection", "A condition caused by viruses, often leading to high lymphocyte levels.");
+        addDisease("Viral Infection", "- Viral Infection is caused by viruses, which are tiny germs that invade the body’s cells. It often leads to an increase in lymphocytes (a type of white blood cell) as the body fights the infection. Common symptoms include fever, cough, fatigue, and body aches, depending on the type of virus. Examples include the flu, colds, and COVID-19");
 
 
     // for --> Parasitic Infection
     if ( wbc > 11000 && eosinophils > 4) 
-        addDisease("Parasitic Infection", "An infection caused by parasites, often seen in tropical or subtropical regions.");
+        addDisease("Parasitic Infection", "-  Parasitic Infection happens when harmful parasites, like worms or tiny organisms, live inside the body. These parasites can cause sickness by stealing nutrients, damaging tissues, or causing allergic reactions. It often leads to high levels of eosinophils (a type of white blood cell).");
 
 
     //for --> Chronic Infections
     if ( wbc > 11000 && monocytes > 8) 
-        addDisease("Chronic Infection (e.g., Tuberculosis)", "A persistent infection characterized by elevated monocytes and white blood cells, often seen in conditions like tuberculosis.");
+        addDisease("Chronic Infection (e.g., Tuberculosis)", "- A Chronic Infection, like Tuberculosis (TB), is a long-lasting illness caused by bacteria, viruses, or other pathogens that stay in the body for a long time. These infections can lead to ongoing health problems if not treated properly.");
 
 
 
@@ -78,21 +78,21 @@ function analyzeBlood() {
 
     // for --> Leukemia
     if ( wbc > 11000 && platelet < 150 && rbc < 4.7 ) 
-        addDisease("Chronic Infection (e.g., Tuberculosis)", "A persistent infection characterized by elevated monocytes and white blood cells, often seen in conditions like tuberculosis.");
+        addDisease("Leukemia", "- Leukemia is a type of cancer that affects the blood and bone marrow, where blood cells are made. It happens when the bone marrow produces abnormal white blood cells that grow uncontrollably and crowd out healthy blood cells.");
 
     // for --> Aplastic Anemia
     if ( wbc < 4000 && platelet < 150 && rbc < 4.7) 
-        addDisease("Aplastic Anemia", "A rare condition where the bone marrow fails to produce enough blood cells, causing fatigue, infections, and bleeding.");
+        addDisease("Aplastic Anemia", " - Aplastic Anemia is a condition where your body stops making enough blood cells. This happens because the bone marrow, which is like a factory for blood cells, slows down or stops working. Blood cells are important for carrying oxygen, fighting infections, and stopping bleeding, so this can cause serious health problems.");
 
 
     // for --> Polycythemia Vera
     if ( rbc > 6.1 && hemoglobin > 17.2 && platelet > 450  ) 
-        addDisease("Polycythemia Vera", "A rare blood disorder causing overproduction of red blood cells, leading to thickened blood and increased clotting risk.");
+        addDisease("Polycythemia Vera", "- Polycythemia Vera (PV) is a rare blood condition where your body makes too many red blood cells. These extra red blood cells make your blood thicker than normal, which can slow blood flow and cause clots.");
 
 
     // for ---> Myelodysplastic Syndrome
     if ( rbc < 4.7 && platelet < 150 && wbc <= 11000) 
-        addDisease("Myelodysplastic Syndrome", "A group of disorders caused by poorly formed or dysfunctional blood cells, often linked to bone marrow issues.");
+        addDisease("Myelodysplastic Syndrome", " - Myelodysplastic Syndrome (MDS) is a condition where the bone marrow, which makes blood cells, doesn't work properly. This leads to fewer healthy blood cells in the body and an increased risk of developing leukemia.");
 
 
     /*                  ---->   Clotting Disorders (Platelet Count and Function)     <----                      */
@@ -101,31 +101,31 @@ function analyzeBlood() {
 
     // for --> Immune Thrombocytopenic Purpura (ITP)
     if (platelet < 150 && rbc >= 4.7 && rbc <= 6.1) 
-        addDisease("Immune Thrombocytopenic Purpura (ITP)", "An autoimmune condition where the immune system destroys platelets, leading to easy bruising and bleeding.");
+        addDisease("Immune Thrombocytopenic Purpura (ITP)", " - Immune Thrombocytopenic Purpura (ITP) is a condition where the immune system mistakenly attacks and destroys platelets in the blood. Platelets are small cells that help with clotting to stop bleeding. With fewer platelets, bleeding can occur more easily.");
   
     // for --> Disseminated Intravascular Coagulation (DIC)
     if (platelet < 150 && rbc < 4.7 && wbc > 11000) 
-        addDisease("Disseminated Intravascular Coagulation (DIC)", "A serious disorder where clotting factors are overactivated, causing both excessive clotting and bleeding.");
+        addDisease("Disseminated Intravascular Coagulation (DIC)", "- Disseminated Intravascular Coagulation (DIC) is a serious condition where the body’s blood clotting system goes out of control. It causes both excessive clotting in some parts of the body and severe bleeding in others.");
 
     // for --> Myeloproliferative Disorders
     if ( platelet > 450 && rbc >= 4.7 ) 
-        addDisease("Myeloproliferative Disorders", "A group of blood cancers that cause the bone marrow to produce too many blood cells.");
+        addDisease("Myeloproliferative Disorders", "- Myeloproliferative Disorders are a group of diseases that cause the bone marrow (the soft tissue inside bones) to produce too many blood cells, leading to an overproduction of one or more types of blood cells.");
 
     // for --> Chronic Inflammatory Conditions
     if ( platelet > 450 && wbc >= 4000) 
-        addDisease("Chronic Inflammatory Conditions", "Prolonged inflammation that may lead to elevated platelet and white blood cell counts, often linked to autoimmune diseases.");
+        addDisease("Chronic Inflammatory Conditions", "- Chronic Inflammatory Conditions refer to long-lasting diseases where the body's immune system is constantly activated, leading to ongoing inflammation in various parts of the body. Inflammation is a natural response to injury or infection, but in chronic conditions, it becomes persistent and can cause damage over time.");
 
     // for --> chronic kidney disease
     if ( rbc < 4.7 && hemoglobin < 13.8) 
-        addDisease("Chronic Kidney Disease", "A condition where the kidneys fail to function properly, often leading to anemia due to reduced erythropoietin production.");
+        addDisease("Chronic Kidney Disease", " - Chronic Kidney Disease (CKD) is a condition where the kidneys gradually lose their ability to filter waste and excess fluids from the blood over time. The kidneys are important organs that help keep the body clean by removing waste products and extra water, as well as balancing electrolytes like sodium and potassium.");
 
     // for --> liver disease
     if ( platelet < 150) 
-        addDisease("Liver Disease (Cirrhosis)", "Scarring of the liver that impairs its ability to produce clotting factors, causing low platelet levels.");
+        addDisease("Liver Disease (Cirrhosis)", " - Liver Disease (Cirrhosis) is a condition where the liver becomes severely damaged over time and can no longer function properly. The liver is a vital organ that helps filter toxins, produce important proteins, store energy, and support digestion. When the liver is damaged, it cannot carry out these functions effectively.");
 
     //for --> Alcoholism
     if ( platelet < 150 && rbc < 4.7 && mcv > 100) 
-        addDisease("Alcoholism", "Prolonged alcohol use can suppress bone marrow function, leading to low platelets, anemia, and enlarged red blood cells.");
+        addDisease("Alcoholism", "- Alcoholism can negatively affect the bone marrow, the part of your body that produces blood cells. When alcohol is consumed in large amounts over time, it can suppress the bone marrow’s ability to function properly. ");
 
 
 
@@ -134,14 +134,14 @@ function analyzeBlood() {
     
     // for --> Systemic Lupus Erythematosus (SLE):
     if ( platelet < 150 && wbc < 4000 && lymphocytes < 20) 
-        addDisease("Systemic Lupus Erythematosus (SLE)", "An autoimmune disease that can affect blood cells, causing low white blood cell and platelet counts.");
+        addDisease("Systemic Lupus Erythematosus (SLE)", "- Systemic Lupus Erythematosus (SLE) is an autoimmune disease, which means that the body’s immune system attacks its own healthy cells and tissues by mistake.");
 
 
     /*            ---> Allergies <----       */
 
     // for --> Allergic disorder
     if ( eosinophils > 4 && basophils >1) 
-        addDisease("Allergic Disorder - Asthma or Atopy", "Allergic reactions causing elevated eosinophils and basophils, often seen in asthma or other atopic conditions.");
+        addDisease("Allergic Disorder - Asthma or Atopy", "- An allergic disorder happens when the immune system overreacts to substances (called allergens) that are usually harmless. These substances can include pollen, dust, pet dander, certain foods, or even insect stings.");
 
 
 
