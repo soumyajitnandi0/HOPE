@@ -76,3 +76,18 @@ section.result h2 {
         font-size: 1rem;
     }
 }
+.disease-detail {
+    margin-bottom: 20px;
+}
+
+.disease-detail h4 {
+    margin: 0;
+    font-size: 24px;
+    color: green;
+}
+
+.disease-detail p {
+    margin: 5px 0 0;
+    font-size: 20px;
+    color: black;
+}
