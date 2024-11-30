@@ -34,6 +34,19 @@ function analyzeBlood() {
     // for --> Iron Deficiency Anemia:
     if (rbc < 4.7 && hemoglobin < 13.8 && mcv < 80 )         
         addDisease("Iron Deficiency Anemia", " - A lack of iron in the body reduces red blood cell production, leading to fatigue and weakness.");
+
+    //for --> Secondary Polycythemia
+    if (rbc > 6.1)         
+        addDisease("Secondary Polycythemia", " - Chronic low oxygen levels (e.g., lung diseases, high altitudes).Symptoms: Headaches, dizziness, itching, increased clot risk.");
+
+    //for --> Sickle Cell Anemia
+    if (hemoglobin < 13.8)         
+        addDisease("Sickle Cell Anemia", " - Genetic mutation causing defective hemoglobin (HbS)..Symptoms: Pain crises, fatigue, organ damage.");
+
+    //for -->
+    if (hemoglobin > 17.2)         
+        addDisease("Hemoglobinopathies", " - Cause: Abnormal hemoglobin types (e.g., HbC, HbE diseases).Symptoms: Vary from mild anemia to severe complications");
+
      
     //for --> Vitamin B12 or Folate Deficiency
      if(hemoglobin < 13.8 && mcv > 100)
