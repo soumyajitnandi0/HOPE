@@ -14,7 +14,7 @@ The project is structured as follows:
 
 ```
 project/
-├── index.html            # Landing Page
+├── landing.html          # Landing Page
 ├── landing.css           # CSS for Landing Page
 ├── verify.html           # Password Verification Page
 ├── verify.css            # CSS for Verification Page
@@ -57,11 +57,13 @@ project/
 ## **Live Deploy in server**
 -  HOPE(https://glen-jumbled-eyelash.glitch.me/landing.html)
 
+---
+
 ## **How to Run**  
 
 1. Clone the repository:  
    ```bash  
-   git clone https://github.com/username/hope-project.git  
+   git clone https://github.com/soumyajitnandi0/Hope.git  
    ```  
 
 2. Open the `landing.html` file in any browser to start exploring HOPE.  
