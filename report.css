@@ -1,111 +1,115 @@
-/* General Styles */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+}
+
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Arial', sans-serif;
-    background: linear-gradient(to right, #e1f5c4, #c6e6a7);
+    background: #e1f7cd;
     color: #333;
 }
 
-/* Header Styles */
-header {
-    background: #27ae60;
-    padding: 15px 20px;
-    color: white;
-    text-align: left;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+/* Fullscreen Canvas for Animated Background */
+#particles-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
 }
 
-header .logo h1 {
-    font-size: 2rem;
-    margin: 0;
-    font-weight: bold;
-    text-transform: uppercase;
-}
-
-/* Section Styles */
 section.blood-input {
-    max-width: 700px;
+    max-width: 800px;
     margin: 50px auto;
     background: white;
     border-radius: 10px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-    padding: 20px 30px;
+    padding: 30px 40px;
     text-align: center;
+    margin-top: 105px;
 }
 
 section.blood-input h2 {
     font-size: 2rem;
-    color: #27ae60;
-    margin-bottom: 20px;
+    color: #279253;
+    margin-bottom: 29px;
     font-weight: bold;
     text-transform: uppercase;
 }
 
-/* Form Styles */
-form#blood-form {
+.form-row {
     display: flex;
-    flex-direction: column;
-    gap: 15px;
+    justify-content: space-between;
 }
 
-form#blood-form label {
+.form-column {
+    flex: 1;
+    padding: 0 10px;
+}
+
+.form-column label {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
     font-weight: bold;
-    color: #555;
     text-align: left;
 }
 
-form#blood-form input {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 1rem;
-    outline: none;
+.form-column input {
+    display: block;
     width: 100%;
-    box-sizing: border-box;
-    transition: border-color 0.3s ease;
-}
-
-form#blood-form input:focus {
-    border-color: #27ae60;
-    box-shadow: 0 0 5px rgba(39, 174, 96, 0.5);
-}
-
-form#blood-form button {
-    background: #27ae60;
-    color: white;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 50px;
-    font-size: 1rem;
+    margin-bottom: 15px;
     font-weight: bold;
-    cursor: pointer;
-    transition: background 0.3s ease, transform 0.3s ease;
+    text-align: left;
+    padding: 7px 0;
+    border-radius: 5px;
 }
 
-form#blood-form button:hover {
-    background: #2ecc71;
-    transform: translateY(-3px);
+button.analyze-button {
+    margin: 20px auto 0;
+    padding: 10px 20px;
+    background-color: #27ae60;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1rem;
+    text-transform: uppercase;
+}
+
+button.analyze-button:hover {
+    background-color: #1e874b;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
     section.blood-input {
         margin: 20px;
-        padding: 15px;
+        padding: 20px;
     }
 
-    form#blood-form input {
-        font-size: 0.9rem;
-        padding: 8px;
+    section.blood-input h2 {
+        font-size: 1.5rem;
     }
 
-    form#blood-form button {
-        font-size: 0.9rem;
-        padding: 10px 15px;
+    .form-row {
+        flex-direction: column;
+    }
+
+    .form-column {
+        padding: 0;
+    }
+
+    button.analyze-button {
+        width: 100%;
     }
 }
-
 
 /* Footer Styling */
 .footer {
@@ -116,6 +120,7 @@ form#blood-form button:hover {
 
 .footer .container {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     max-width: 1200px;
     margin: 0 auto;
@@ -125,6 +130,7 @@ form#blood-form button:hover {
 .footer-about, .footer-contact, .footer-social {
     flex: 1;
     padding: 0 15px;
+    margin-bottom: 20px;
 }
 
 .footer-contact ul {
@@ -160,3 +166,8 @@ form#blood-form button:hover {
     font-size: 14px;
 }
 
+@media (min-width: 769px) {
+    .footer .container {
+        flex-direction: row;
+    }
+}

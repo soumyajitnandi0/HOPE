@@ -1,0 +1,528 @@
+/* Global Styles */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+
+body {
+    font-family: "Montserrat", sans-serif;
+    background-color: #e1f7cd;
+}
+
+/* Fullscreen Canvas for Animated Background */
+#particles-canvas {
+    position: fixed;  /* Fix the canvas to the screen */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;  /* Place it behind the content */
+}
+
+
+/* Hero Section with Background Image */
+.hero {
+    height: 96vh; 
+    /* background: url("back6.jpg") no-repeat center center; */
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #000000;
+    margin-top: 40px;
+    /* position: relative; */
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* background-color: rgba(0, 0, 0, 0.54); Lighter grey with 30% opacity */
+    z-index: 1;
+  }
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    margin-top: 70px;
+    width: 90%;
+    color: #000000;
+}
+
+/* Position the login and sign-up buttons in the top-right corner of the hero section */
+.auth-buttons {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 2;
+    margin-top: 50px;
+}
+
+.auth-buttons button {
+    margin-left: 10px;
+    padding: 10px 20px; /* Adjust padding for size */
+    border: none;
+    border-radius: 25px; /* This value makes the button roundish */
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s ease; /* For a smooth hover effect */
+}
+
+.login-btn {
+    background-color: white;
+    color: black;
+    transition: background-color 0.3s, transform 0.2s;
+    border: 1px solid black;
+}
+
+.signup-btn {
+    background-color: black;
+    color: white;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+/* Modal styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8); /* Black background with opacity */
+  }
+  
+  /* Modal content box */
+  .modal-content {
+    background-color: #fff;
+    margin: 13% auto; /* Center vertically and horizontally */
+    padding: 20px;
+    border-radius: 10px;
+    width: 35%; /* Adjust the size as needed */
+    text-align: left;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Center the modal heading */
+  .modal-content h2 {
+    text-align: center;
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  /* Form label styling */
+  .modal-content label {
+    display: block;
+    font-size: 1rem;
+    margin: 10px 0 5px 10px; /* Align labels */
+    color: #555;
+  }
+  
+  /* Input field styling */
+  .modal-content input {
+    width: calc(100% - 40px);
+    margin: 5px 10px 15px 10px;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+  
+  /* Centering buttons */
+  #sign-log-btn {
+    display: block;
+    margin: 10px auto;
+    padding: 10px 20px;
+    background-color: #038a17;
+    color: #fff;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+  }
+  
+  /* Hover effect for buttons */
+ #sign-btn:hover {
+    background-color: #2a6b10;
+  }
+  
+  /* Close button */
+  .modal-content .close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #555;
+    cursor: pointer;
+  }
+  
+  .modal-content .close:hover {
+    color: #000;
+  }
+  
+  
+  /* Close button */
+  .closebtn {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .closebtn:hover {
+    color: red;
+  }
+  
+  /* Form styles */
+  form input {
+    display: block;
+    width: 90%;
+    margin: 10px auto;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  form button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  form button:hover {
+    background-color: #45a049;
+  }
+  
+h4{
+    text-align: center;
+}
+
+
+/* google-button */
+#google-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    color: #000000;
+    border: 1px solid #000000;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    max-width: 100%;
+    margin: 20px auto; /* Centers the button horizontally */
+}
+
+
+/* Google icon styling */
+.google-icon {
+    width: 23.5px;
+    height: 23.5px;
+    margin-right: 10px;
+}
+
+#google-btn:hover {
+    background-color: #6c6c6c45;
+    color: rgb(0, 0, 0);
+}
+
+/* Hover effects */
+.login-btn:hover {
+    transform: scale(1.05);
+    background-color: rgba(151, 151, 151, 0.377); /* Change the color on hover */
+}
+
+.signup-btn:hover {
+    transform: scale(1.05);
+    background-color: #333;
+}
+
+
+.hero h1 {
+    font-size: 2.6rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+}
+
+.hero #explore-btn {
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    background-color: #740000;
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.hero #explore-btn:hover {
+    background-color: #008c0c;
+}
+
+
+/* About Us */
+.about-us {
+    padding: 20px 40px 20PX;
+    text-align: center;
+    background: #a5a5a504;
+    margin-top: 23px;
+    margin-bottom: 45px;
+}
+
+.about-us h2, .what-we-do h2 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.about-us p {
+    font-size: 18px;
+}
+
+/* our mission */
+.what-we-do {
+    padding: 20px 10%; /* Adjust padding for responsiveness */
+    text-align: center;
+    background: #a5a5a504;
+}
+
+.mission-card {
+    width: 95%; /* Default to 90% for smaller screens */
+    max-width: 1300px; /* Maximum width for larger screens */
+    margin: 50px auto; /* Center the card */
+    padding: 10px 15px 50px; /* Add padding to create space for buttons */
+    background: linear-gradient(to bottom right, #f8f9fa, #e9ecef);
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    position: relative;
+}
+
+.button-container {
+    display: flex;
+    flex-wrap: wrap; /* Wrap buttons to next row if needed */
+    justify-content: center; /* Center buttons for all screen sizes */
+    position: absolute; /* Position buttons over the card */
+    top: -17px; /* Adjust to position above the card */
+    left: 0;
+    right: 0;
+    z-index: 1; /* Ensure buttons are above card background */
+    gap: 10px; /* Add spacing between buttons */
+}
+
+.mission-btn {
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
+    flex: 1; /* Make buttons flexible to take equal space */
+    max-width: 200px; /* Set a maximum width for buttons */
+    margin: 0 5px; /* Add margin between buttons */
+    font-size: 14px; /* Adjust font size for small screens */
+}
+
+.mission-btn:first-child { background-color: #007bff; }
+.mission-btn:nth-child(2) { background-color: #124a03; }
+.mission-btn:nth-child(3) { background-color: #d10ae3; }
+.mission-btn:nth-child(4) { background-color: #26790f; }
+.mission-btn:last-child { background-color: #c62e2e; }
+
+.mission-btn:hover {
+    color: #000;
+    background-color: #b0ed4d; /* Darker shade on hover */
+    transform: scale(1.05);
+}
+
+.content {
+    margin-top: 60px; /* Adjust to make space for buttons */
+    transition: opacity 0.3s;
+}
+
+.content p {
+    font-size: 20px; /* Default font size */
+    color: #000000;
+    display: none; /* Hide paragraphs initially */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .mission-card {
+        padding: 10px; /* Reduce padding for smaller screens */
+    }
+
+    .button-container {
+        flex-direction: column; /* Stack buttons vertically */
+        position: static; /* Prevent buttons from overlapping the card */
+        margin-top: 20px; /* Add spacing above buttons */
+    }
+
+    .mission-btn {
+        flex: none; /* Prevent buttons from stretching */
+        width: 100%; /* Full-width buttons for small screens */
+        max-width: none; /* Remove max-width constraint */
+        margin: 5px 0; /* Add vertical margin */
+    }
+
+    .content p {
+        font-size: 16px; /* Adjust font size for readability */
+    }
+}
+
+@media (max-width: 480px) {
+    .mission-btn {
+        font-size: 12px; /* Smaller font size for very small screens */
+        padding: 8px 10px; /* Reduce padding for smaller buttons */
+    }
+
+    .content p {
+        font-size: 14px; /* Further reduce font size */
+    }
+}
+
+
+
+/* Footer */
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+}
+
+.footer .container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 70px;
+}
+
+.footer-about, .footer-contact, .footer-social {
+    flex: 1;
+    padding: 0 15px;
+}
+
+.footer-contact ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-contact li {
+    margin-bottom: 8px;
+}
+
+.footer-contact a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-social a {
+    margin-right: 10px;
+    color: #fff;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.footer-social img{
+    height: 30px;
+    width: 30px;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding: 10px 0;
+    background-color: #222;
+    font-size: 14px;
+}
+
+/* Responsive Design */
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    /* Navbar */
+    .search-bar {
+        width: 70%; /* Shrink search bar width on mobile */
+    }
+
+    /* Hero Section */
+    .hero h1 {
+        font-size: 2.5rem; /* Smaller headings */
+    }
+
+    .hero p {
+        font-size: 1.2rem;
+    }
+
+    .hero button {
+        padding: 10px 20px;
+        font-size: 1rem;
+    }
+
+    /* Services Section */
+    .services {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .service {
+        width: 80%; /* Full width on mobile */
+        margin-bottom: 20px;
+    }
+
+    /* Footer */
+    .footer .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-about, .footer-contact, .footer-social {
+        margin-bottom: 20px;
+    }
+}
+
+/* Tablet and Small Desktops */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .search-bar {
+        width: 60%; /* Adjust for tablets */
+    }
+
+    .services {
+        flex-wrap: wrap;
+    }
+
+    .service {
+        width: 45%; /* Two services per row */
+        margin-bottom: 20px;
+    }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+    /* Ensure wide screens maintain the original layout */
+}}

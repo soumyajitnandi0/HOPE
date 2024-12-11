@@ -1,8 +1,21 @@
 
-// Redirect to Blood Input Page
-function redirectToBloodInput() {
-    window.location.href = "report.html";
+// // Redirect to Blood Input Page
+// function redirectToBloodInput() {
+//     window.location.href = "report.html";
+// }
+
+
+// Function to open the sidenav
+function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
 }
+
+// Function to close the sidenav
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+}
+
+
 
 // Analyze Blood Parameters
 function analyzeBlood() {
@@ -217,6 +230,13 @@ window.onload = function () {
     }
 };
 
+//back to report page
+const backReport = document.getElementById('back-report');
+
+backReport.addEventListener('click' , ()=> {
+    window.location.href = "report.html";
+})
+
 
 
 
@@ -224,98 +244,98 @@ window.onload = function () {
 //////////////////////////////////////////////////////////////////////////////////////
 
 
-// Function to generate a 4-digit random password
-function generatePassword() {
-    return Math.floor(1000 + Math.random() * 9000);
-}
+// // Function to generate a 4-digit random password
+// function generatePassword() {
+//     return Math.floor(1000 + Math.random() * 9000);
+// }
 
-// Function to retrieve OTP store from localStorage
-function getOtpStore() {
-    const storedOtp = localStorage.getItem("otpStore");
-    return storedOtp ? JSON.parse(storedOtp) : {};
-}
+// // Function to retrieve OTP store from localStorage
+// function getOtpStore() {
+//     const storedOtp = localStorage.getItem("otpStore");
+//     return storedOtp ? JSON.parse(storedOtp) : {};
+// }
 
-// Function to save OTP store to localStorage
-function saveOtpStore(otpStore) {
-    localStorage.setItem("otpStore", JSON.stringify(otpStore));
-}
+// // Function to save OTP store to localStorage
+// function saveOtpStore(otpStore) {
+//     localStorage.setItem("otpStore", JSON.stringify(otpStore));
+// }
 
-document.addEventListener("DOMContentLoaded", () => {
-    const continueButton = document.getElementById("continueButton");
-    const verifyButton = document.getElementById("verifyButton");
+// document.addEventListener("DOMContentLoaded", () => {
+//     const continueButton = document.getElementById("continueButton");
+//     const verifyButton = document.getElementById("verifyButton");
 
-    // Handle "Continue" button click (landing.html)
-    if (continueButton) {
-        continueButton.addEventListener("click", () => {
-            const mobileNumber = document.getElementById("mobileNumber").value;
+//     // Handle "Continue" button click (landing.html)
+//     if (continueButton) {
+//         continueButton.addEventListener("click", () => {
+//             const mobileNumber = document.getElementById("mobileNumber").value;
 
-            if (!mobileNumber || mobileNumber.length !== 10) {
-                alert("Please enter a valid 10-digit mobile number.");
-                return;
-            }
+//             if (!mobileNumber || mobileNumber.length !== 10) {
+//                 alert("Please enter a valid 10-digit mobile number.");
+//                 return;
+//             }
 
-            const otpStore = getOtpStore();
-            let password;
-            const isNewNumber = !otpStore[mobileNumber];
+//             const otpStore = getOtpStore();
+//             let password;
+//             const isNewNumber = !otpStore[mobileNumber];
 
-            if (isNewNumber) {
-                // Generate and save password for new numbers
-                password = generatePassword();
-                otpStore[mobileNumber] = password;
-                saveOtpStore(otpStore);
-            } else {
-                password = otpStore[mobileNumber];
-            }
+//             if (isNewNumber) {
+//                 // Generate and save password for new numbers
+//                 password = generatePassword();
+//                 otpStore[mobileNumber] = password;
+//                 saveOtpStore(otpStore);
+//             } else {
+//                 password = otpStore[mobileNumber];
+//             }
 
-            // Store mobile number and new number flag
-            localStorage.setItem("currentMobileNumber", mobileNumber);
-            localStorage.setItem("isNewNumber", isNewNumber);
+//             // Store mobile number and new number flag
+//             localStorage.setItem("currentMobileNumber", mobileNumber);
+//             localStorage.setItem("isNewNumber", isNewNumber);
 
-            // Redirect to verify.html
-            window.location.href = "verify.html";
-        });
-    }
+//             // Redirect to verify.html
+//             window.location.href = "verify.html";
+//         });
+//     }
 
-    // Handle "Verify" page logic
-    if (verifyButton) {
-        const mobileNumber = localStorage.getItem("currentMobileNumber");
-        const isNewNumber = localStorage.getItem("isNewNumber") === "true";
+//     // Handle "Verify" page logic
+//     if (verifyButton) {
+//         const mobileNumber = localStorage.getItem("currentMobileNumber");
+//         const isNewNumber = localStorage.getItem("isNewNumber") === "true";
 
-        if (!mobileNumber) {
-            alert("No mobile number found. Please go back and try again.");
-            return;
-        }
+//         if (!mobileNumber) {
+//             alert("No mobile number found. Please go back and try again.");
+//             return;
+//         }
 
-        const otpStore = getOtpStore();
+//         const otpStore = getOtpStore();
 
-        if (!otpStore[mobileNumber]) {
-            alert("No password found for this mobile number.");
-            return;
-        }
+//         if (!otpStore[mobileNumber]) {
+//             alert("No password found for this mobile number.");
+//             return;
+//         }
 
-        // Show password if it's a new number
-        if (isNewNumber) {
-            const passwordDisplay = document.querySelector(".password-display");
-            passwordDisplay.textContent = `[ Your Password: ${otpStore[mobileNumber]} ]`;
-            passwordDisplay.classList.add("show");
+//         // Show password if it's a new number
+//         if (isNewNumber) {
+//             const passwordDisplay = document.querySelector(".password-display");
+//             passwordDisplay.textContent = `[ Your Password: ${otpStore[mobileNumber]} ]`;
+//             passwordDisplay.classList.add("show");
 
-            setTimeout(() => {
-                passwordDisplay.classList.remove("show");
-                passwordDisplay.textContent = ""; // Clear text after animation
-            }, 5000);
-        }
+//             setTimeout(() => {
+//                 passwordDisplay.classList.remove("show");
+//                 passwordDisplay.textContent = ""; // Clear text after animation
+//             }, 5000);
+//         }
 
-        // Verify button click handler
-        verifyButton.addEventListener("click", () => {
-            const enteredPassword = document.getElementById("passwordInput").value;
+//         // Verify button click handler
+//         verifyButton.addEventListener("click", () => {
+//             const enteredPassword = document.getElementById("passwordInput").value;
 
-            if (otpStore[mobileNumber] == enteredPassword) {
-                alert("Password verified successfully!");
-                window.location.href = "report.html";
-            } else {
-                alert("Incorrect password. Please try again.");
-            }
-        });
-    }
-});
+//             if (otpStore[mobileNumber] == enteredPassword) {
+//                 alert("Password verified successfully!");
+//                 window.location.href = "report.html";
+//             } else {
+//                 alert("Incorrect password. Please try again.");
+//             }
+//         }); 
+//     }
+// });
 

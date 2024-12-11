@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hope</title>
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="style.css">
+    <!-- Include Particles.js CDN -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="firebase.js" defer type="module"></script>
+
+
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <a href="home.html"><div class="logo">Hope</div></a>
+        <input type="text" class="search-bar" placeholder="Search">
+        
+        <!-- Hamburger Menu Icon -->
+        <button class="open-btn" onclick="openNav()"> ☰ </button>
+
+        <!-- The Sidenav -->
+        <div id="mySidenav" class="sidenav">
+            <a href="javascript:void(0)" class="close-btn" onclick="closeNav()">&times;</a>
+            <a href="home.html">Home</a>
+            <a href="menu.html">Menu</a>
+            <a href="locate.html">Locate Us</a>
+            <a href="#">Legal Details</a>
+            <a href="#">Terms & Conditions</a>
+        </div>
+    </nav>
+
+    <!-- Particles Canvas -->
+<div id="particles-canvas"></div>
+
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+        <h1>Health Optimization & Predictive Evaluation</h1>
+        <p>HOPE is a project aimed at leveraging data-driven insights to predict potential health risks and optimize well-being. It empowers individuals to make informed health decisions through advanced analysis and personalized recommendations.</p>
+        <a href="info.html"><button id="explore-btn">Explore More</button></a>
+    </div>
+
+    <!-- Login and Sign Up Buttons -->
+    <div class="auth-buttons">
+        <!-- Login Button -->
+        <button class="login-btn" id="loginBtn">Log In</button>
+        <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+        <span class="closebtn" id="closeModal1">&times;</span>
+        <h2>Log In</h2>
+        <form>
+            <label for="email">Email:</label>
+            <input type="email" id="email-l" placeholder="enter your email" required>
+            <label for="password">Password:</label>
+            <input type="password" id="password-l" placeholder="enter your password" required>
+            <button type="submit" id="sign-log-btn">Submit</button>
+        </form>
+        <h4>-----------------------------------or-----------------------------------</h4>
+        <button class="google-btn" id="google-btn">
+          <img src="https://cdn1.iconfinder.com/data/icons/google-s-logo/150/Google_Icons-09-512.png" alt="Google logo" class="google-icon">
+          Log in with Google
+        </button>
+
+        </div>
+    </div>
+        <!-- Signup Button -->
+        <button class="signup-btn" id="signupBtn">Sign Up</button>
+        <!-- Login Modal -->
+    <div id="signupModal" class="modal">
+        <div class="modal-content">
+        <span class="closebtn" id="closeModal2">&times;</span>
+        <h2>Sign Up</h2>
+        <form>
+            <label for="name">Name:</label>
+            <input type="name" id="name" placeholder="enter your name" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" placeholder="enter your email" required>
+            <label for="password">Password:</label>
+            <input type="password" id="password" placeholder="enter your password" required>
+            <button type="submit" id="sign-log-btn">Submit</button>
+        </form>
+        <h4>-----------------------------------or-----------------------------------</h4>
+        <button class="google-btn" id="google-btn">
+          <img src="https://cdn1.iconfinder.com/data/icons/google-s-logo/150/Google_Icons-09-512.png" alt="Google logo" class="google-icon">
+          Sign in with Google
+        </button>
+        </div>
+    </div>
+
+    </div>
+    </section>
+
+
+
+    
+
+    <!-- Our mission -->
+    <section class="what-we-do">
+        <h2>Terms</h2>
+        <div class="mission-card">
+            <div class="button-container">
+                <button class="mission-btn" id="btn1" onclick="showContent(1)">RBC</button>
+                <button class="mission-btn" id="btn2" onclick="showContent(2)">WBC</button>
+                <button class="mission-btn" id="btn3" onclick="showContent(3)">Platelets</button>
+                <button class="mission-btn" id="btn3" onclick="showContent(4)">Hemoglobin</button>
+                <button class="mission-btn" id="btn3" onclick="showContent(5)">MCV</button>
+            </div>
+            <div class="content">
+                <p id="default-text" style="display: contents;">Conducting regular blood tests and thorough analysis is imperative for early detection and proactive management of potential health issues. This practice offers invaluable insights into organ function, metabolic processes, and immune system performance, thereby enabling informed healthcare decisions and promoting overall well-being.</p>
+                <p id="content-1" style="display: none;">Red blood cells (erythrocytes) are the most abundant cell type in the blood and are primarily responsible for delivering oxygen from the lungs to tissues throughout the body and returning carbon dioxide from the tissues to the lungs. Each RBC contains hemoglobin, a protein that binds oxygen. RBCs are produced in the bone marrow and have a lifespan of about 120 days.</p>
+                <p id="content-2" style="display: none;">White blood cells (leukocytes) are key components of the immune system, tasked with defending the body against infections, foreign substances, and diseases. They are less numerous than red blood cells and come in various types, including neutrophils, lymphocytes, monocytes, eosinophils, and basophils. Each type of WBC has specific functions, such as attacking bacteria, producing antibodies, and managing allergic reactions.</p>
+                <p id="content-3" style="display: none;">Platelets (thrombocytes) are small, colorless cell fragments in the blood whose primary function is to help blood clot and prevent excessive bleeding. When a blood vessel is injured, platelets quickly gather at the site, stick to the lining of the injured blood vessel, and form a plug (clot) by secreting chemical signals that attract more platelets and other clotting factors. This process is crucial for wound healing and maintaining hemostasis.</p>
+                <p id="content-4" style="display: none;">Hemoglobin is a complex protein found in red blood cells that carries oxygen from the lungs to the rest of the body and returns carbon dioxide from the body to the lungs to be exhaled. It consists of four protein subunits, each containing an iron molecule that binds oxygen. Hemoglobin is essential for oxygen transport, and its levels are often measured to diagnose conditions like anemia.</p>
+                <p id="content-5" style="display: none;">Mean Corpuscular Volume (MCV) is a measure of the average volume of a red blood cell and is calculated by dividing the total volume of red blood cells by their number. MCV is expressed in femtoliters (fL) and helps in diagnosing different types of anemia. Low MCV indicates microcytic anemia (small red blood cells, often due to iron deficiency), while high MCV suggests macrocytic anemia (large red blood cells, often due to vitamin B12 or folate deficiency).</p>
+            </div>
+        </div>
+             
+    </section>
+
+    <br><br><br>
+
+
+    <!-- About Us & What We Do -->
+    <section class="about-us">
+        <h2>About HOPE</h2>
+        <p>Wheeelicious is a vibrant street food platform dedicated to transforming the street food experience by prioritizing hygiene, transparency, and sustainability. Our mission is to bring delicious, high-quality street food to food lovers while ensuring that every meal is prepared with the utmost care and quality standards. We partner with local vendors, providing them with the support they need to thrive in a competitive market. Through our innovative app, we streamline the licensing process for street vendors and enhance their visibility to customers. At Wheeelicious, we believe that everyone deserves access to safe and delightful street food experiences, and we are committed to making that a reality for communities everywhere. Join us on this flavorful journey!</p>
+    </section>
+
+
+    <!-- footer section -->
+    <footer class="footer">
+        <div class="container">
+            <!-- About Section -->
+            <div class="footer-about">
+                <h3>About Us</h3>
+                <p>We are a street food platform aiming to bring hygiene, transparency, and awareness to street food culture.</p>
+            </div>
+    
+            <!-- Contact Details Section -->
+            <div class="footer-contact">
+                <h3>Contact Us</h3>
+                <ul>
+                    <li><strong>Address:</strong> EC Phase-I, Bengaluru, INDIA</li>
+                    <li><strong>Email:</strong> <a href="mailto:info@example.com">info@example.com</a></li>
+                    <li><strong>Phone:</strong> +123-456-7890</li>
+                </ul>
+            </div>
+    
+            <!-- Social Media Section -->
+            <div class="footer-social">
+                <h3>Follow Us</h3>
+                <a href="https://facebook.com" target="_blank"><img src="https://static.vecteezy.com/system/resources/previews/018/930/476/non_2x/facebook-logo-facebook-icon-transparent-free-png.png" alt="facebook icon"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://twitter.com" target="_blank"><img src="https://static.vecteezy.com/system/resources/previews/042/148/611/non_2x/new-twitter-x-logo-twitter-icon-x-social-media-icon-free-png.png" alt="x icon"><i class="fab fa-twitter"></i></a>
+                <a href="https://instagram.com" target="_blank"><img src="https://static.vecteezy.com/system/resources/previews/018/930/415/non_2x/instagram-logo-instagram-icon-transparent-free-png.png" alt="Instagram icon"><i class="fab fa-instagram"></i></a>
+                <a href="https://youtube.com" target="_blank"><img src="https://static.vecteezy.com/system/resources/thumbnails/023/986/480/small_2x/youtube-logo-youtube-logo-transparent-youtube-icon-transparent-free-free-png.png" alt="youtube icon"><i class="fab fa-youtube-in"></i></a>
+                <a href="https://linkedin.com" target="_blank"><img src="https://static.vecteezy.com/system/resources/previews/023/986/970/non_2x/linkedin-logo-linkedin-logo-transparent-linkedin-icon-transparent-free-free-png.png" alt="linkedin icon"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+    
+        <!-- Copyright Section -->
+        <div class="footer-bottom">
+            <p>&copy; 2024 Hope. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <script src="home.js"></script>
+    <script>
+        particlesJS("particles-canvas", {
+          "particles": {
+            "number": {
+              "value": 200,  // Adjust the number of particles
+              "density": {
+                "enable": true,
+                "value_area": 800
+              }
+            },
+            "color": {
+              "value": "#a6c5a6"  // Particle color (change as needed)
+            },
+            "shape": {
+              "type": "polygon",  // Shape of the particles (circle, edge, triangle, polygon, etc.)
+              "stroke": {
+                "width": 0,
+                "color": "#a6c5a6"
+              }
+            },
+            "opacity": {
+              "value": 700,  // Particle opacity
+              "random": true,
+              "anim": {
+                "enable": true,
+                "speed": 1,
+                "opacity_min": 0.1
+              }
+            },
+            "size": {
+              "value": 3,  // Size of particles
+              "random": true,
+              "anim": {
+                "enable": true,
+                "speed": 40,
+                "size_min": 0.1
+              }
+            },
+            "line_linked": {
+              "enable": true,
+              "distance": 150,  // Distance between particles where lines will connect
+              "color": "#a6c5a6",  // Line color (same as particle)
+              "opacity": 1.5,
+              "width": 1
+            },
+            "move": {
+              "enable": true,
+              "speed": 6,
+              "direction": "none",
+              "random": true,
+              "straight": false,
+              "out_mode": "out"
+            }
+          },
+        //   "interactivity": {
+        //     "detect_on": "window",
+        //     "events": {
+        //       "onhover": {
+        //         "enable": true,
+        //         "mode": "repulse"  // Repulsion effect on hover
+        //       },
+        //       "onclick": {
+        //         "enable": true,
+        //         "mode": "push"  // Add more particles on click
+        //       }
+        //     }
+        //   },
+          "retina_detect": true  // Detect retina for higher resolution displays
+        });
+      </script>
+      
+</body>
+</html>

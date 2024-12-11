@@ -5,51 +5,74 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HOPE - Blood Input</title>
     <link rel="stylesheet" href="report.css">
+    <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
-
+    <!-- Include Particles.js CDN -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 </head>
 <body>
     <header>
-        <nav>
-            <div class="logo">
-                <h1>HOPE</h1>
-            </div>
-        </nav>
+        <!-- Navbar -->
+    <nav class="navbar">
+        <a href="home.html"><div class="logo">Hope</div></a>
+        <input type="text" class="search-bar" placeholder="Search">
+        
+        <!-- Hamburger Menu Icon -->
+        <button class="open-btn" onclick="openNav()"> ☰ </button>
+
+        <!-- The Sidenav -->
+        <div id="mySidenav" class="sidenav">
+            <a href="javascript:void(0)" class="close-btn" onclick="closeNav()">&times;</a>
+            <a href="home.html">Home</a>
+            <a href="menu.html">Menu</a>
+            <a href="locate.html">Locate Us</a>
+            <a href="#">Legal Details</a>
+            <a href="#">Terms & Conditions</a>
+        </div>
+    </nav>
+
+    <!-- Particles Canvas -->
+<div id="particles-canvas"></div>
+
     </header>
     <section class="blood-input">
         <h2>Blood Test Parameters</h2>
         <form id="blood-form">
-            <label for="rbc">RBC Count (million/μL):</label>
-            <input type="number" id="rbc" name="rbc" required>
+            <div class="form-row">
+                <div class="form-column">
+                    <label for="rbc">RBC Count (million/μL):</label>
+                    <input type="number" id="rbc" name="rbc" required>
 
-            <label for="hemoglobin">Hemoglobin (g/dL):</label>
-            <input type="number" id="hemoglobin" name="hemoglobin" required>
+                    <label for="hemoglobin">Hemoglobin (g/dL):</label>
+                    <input type="number" id="hemoglobin" name="hemoglobin" required>
 
-            <label for="wbc">WBC Count (cells/μL):</label>
-            <input type="number" id="wbc" name="wbc" required>
+                    <label for="wbc">WBC Count (cells/μL):</label>
+                    <input type="number" id="wbc" name="wbc" required>
 
-            <label for="neutrophils">Neutrophils (%):</label>
-            <input type="number" id="neutrophils" name="neutrophils" required>
+                    <label for="neutrophils">Neutrophils (%):</label>
+                    <input type="number" id="neutrophils" name="neutrophils" required>
 
-            <label for="lymphocytes"> Lymphocytes (%):</label>
-            <input type="number" id="lymphocytes" name="lymphocytes" required>
+                    <label for="lymphocytes">Lymphocytes (%):</label>
+                    <input type="number" id="lymphocytes" name="lymphocytes" required>
+                </div>
+                <div class="form-column">
+                    <label for="eosinophils">Eosinophils (%):</label>
+                    <input type="number" id="eosinophils" name="eosinophils" required>
 
-            <label for="eosinophils">Eosinophils (%):</label>
-            <input type="number" id="eosinophils" name="eosinophils" required>
+                    <label for="basophils">Basophils (%):</label>
+                    <input type="number" id="basophils" name="basophils" required>
 
-            <label for="basophils">Basophils (%):</label>
-            <input type="number" id="basophils" name="basophils" required>
+                    <label for="monocytes">Monocytes (%):</label>
+                    <input type="number" id="monocytes" name="monocytes" required>
 
-            <label for="monocytes">Monocytes (%):</label>
-            <input type="number" id="monocytes" name="monocytes" required>
+                    <label for="platelet">Platelet Count (thousands/μL):</label>
+                    <input type="number" id="platelet" name="platelet" required>
 
-            <label for="platelet">Platelet Count (thousands/μL):</label>
-            <input type="number" id="platelet" name="platelet" required>
-
-            <label for="mcv">MCV (fL):</label>
-            <input type="number" id="mcv" name="mcv" required>
-
-            <button type="button" onclick="analyzeBlood()">Analyze</button>
+                    <label for="mcv">MCV (fL):</label>
+                    <input type="number" id="mcv" name="mcv" required>
+                </div>
+            </div>
+            <button type="button" onclick="analyzeBlood()" class="analyze-button">Analyze</button>
         </form>
     </section>
 
@@ -89,5 +112,75 @@
             <p>&copy; 2024 HOPE. All rights reserved.</p>
         </div>
     </footer>
+    <script>
+        particlesJS("particles-canvas", {
+          "particles": {
+            "number": {
+              "value": 200,  // Adjust the number of particles
+              "density": {
+                "enable": true,
+                "value_area": 800
+              }
+            },
+            "color": {
+              "value": "#a6c5a6"  // Particle color (change as needed)
+            },
+            "shape": {
+              "type": "polygon",  // Shape of the particles (circle, edge, triangle, polygon, etc.)
+              "stroke": {
+                "width": 0,
+                "color": "#a6c5a6"
+              }
+            },
+            "opacity": {
+              "value": 700,  // Particle opacity
+              "random": true,
+              "anim": {
+                "enable": true,
+                "speed": 1,
+                "opacity_min": 0.1
+              }
+            },
+            "size": {
+              "value": 3,  // Size of particles
+              "random": true,
+              "anim": {
+                "enable": true,
+                "speed": 40,
+                "size_min": 0.1
+              }
+            },
+            "line_linked": {
+              "enable": true,
+              "distance": 150,  // Distance between particles where lines will connect
+              "color": "#a6c5a6",  // Line color (same as particle)
+              "opacity": 1.5,
+              "width": 1
+            },
+            "move": {
+              "enable": true,
+              "speed": 6,
+              "direction": "none",
+              "random": true,
+              "straight": false,
+              "out_mode": "out"
+            }
+          },
+        //   "interactivity": {
+        //     "detect_on": "window",
+        //     "events": {
+        //       "onhover": {
+        //         "enable": true,
+        //         "mode": "repulse"  // Repulsion effect on hover
+        //       },
+        //       "onclick": {
+        //         "enable": true,
+        //         "mode": "push"  // Add more particles on click
+        //       }
+        //     }
+        //   },
+          "retina_detect": true  // Detect retina for higher resolution displays
+        });
+    </script>
 </body>
 </html>
