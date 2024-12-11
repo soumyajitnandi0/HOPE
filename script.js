@@ -43,7 +43,7 @@ function analyzeBlood() {
     if (hemoglobin < 13.8)         
         addDisease("Sickle Cell Anemia", " - Genetic mutation causing defective hemoglobin (HbS)..Symptoms: Pain crises, fatigue, organ damage.");
 
-    //for -->
+    //for --> Hemoglobinopathies
     if (hemoglobin > 17.2)         
         addDisease("Hemoglobinopathies", " - Cause: Abnormal hemoglobin types (e.g., HbC, HbE diseases).Symptoms: Vary from mild anemia to severe complications");
 

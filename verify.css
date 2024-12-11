@@ -56,24 +56,6 @@ header .logo h1 {
 }
 
 
-.get-started-btn {
-    padding: 15px 30px;
-    border: none;
-    background: #27ae60;
-    color: white;
-    font-size: 1.2rem;
-    font-weight: bold;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: 0.4s ease-in-out;
-}
-
-.get-started-btn:hover {
-    background: #148b46;
-    transform: scale(1.05);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-}
-
 /* Content Section (Verify OTP) */
 .content {
     flex: 1;
