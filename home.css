@@ -217,7 +217,22 @@ h4{
 
 
 /* google-button */
-#google-btn {
+#google-btn1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    color: #000000;
+    border: 1px solid #000000;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    max-width: 100%;
+    margin: 20px auto; /* Centers the button horizontally */
+}
+
+#google-btn2 {
     display: flex;
     align-items: center;
     justify-content: center;

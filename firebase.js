@@ -19,8 +19,35 @@ auth.languageCode = 'en'
 
 const provider = new GoogleAuthProvider();
 
-const googleLogin =document.getElementById("google-btn");
+
+
+
+
+const googleLogin =document.getElementById("google-btn1");
 googleLogin.addEventListener("click" ,function(){
+
+
+  signInWithPopup(auth, provider)
+.then((result) => {
+  const credential = GoogleAuthProvider.credentialFromResult(result);
+  const user = result.user;
+  console.log(user);
+  window.location.href = "report.html";
+
+
+}).catch((error) => {
+  const errorCode = error.code;
+  const errorMessage = error.message;
+});
+
+
+})
+
+
+
+
+const googleSignup =document.getElementById("google-btn2");
+googleSignup.addEventListener("click" ,function(){
 
 
   signInWithPopup(auth, provider)
